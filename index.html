@@ -353,10 +353,117 @@
 			      <figure>
                     <img src="img/logos-fuentes-areas.jpg" alt="Logos de fuentes de registros de presencia" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
                   </figure>
-				</section>						
+				</section>	
+				<section id="modelado-nichos">
+				  <h3>Fuentes de datos: modelos de nichos ecológicos</h3>
+				  <figure>
+                    <img src="img/niche-modelling-toyexample.png" alt="Esquema de modelo de nicho ecológico" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                    <figcaption><small>Ejemplo de modelo de nicho ecológico<br><a href="https://www.researchgate.net/publication/278030758_Using_environmental_niche_model_to_study_the_distribution_of_Tonkin_snub-nosed_monkey_Rhinopithecus_avunculus_in_the_Northeastern_Vietnam_under_some_climate_change_scenarios/figures?lo=1">Imagen de Pham Thanh Van</a></small></figcaption>
+                  </figure>
+				</section>					
+				<section id="base-datos-01">
+				  <h3>Base de datos para DDC de Fonafifo</h3>
+                  <ul>
+					<p>
+					  <strong>20 capas para análisis</strong>:
+					  <ul>
+					    <li>Fincas con contrato de PSA (2012 - 2018)</li>
+					    <li>División territorial administrativa</li>
+						<li>Áreas de conservación</li>
+						<li>Áreas protegidas</li>
+						<li>Corredores biológicos</li>
+						<li>Vacíos de conservación</li>
+						<li>Unidades fitogeográficas</li>
+						<li>...</li>
+					  </ul>
+					</p>
+                  </ul>
+				</section>									
+				<section id="base-datos-02">
+				  <h3>Base de datos para DDC de Fonafifo</h3>
+                  <ul>
+					<p>
+					  <strong>~6.5 millones de registros de presencia</strong>:
+					  <ul>
+					    <li>~20 mil registros de <em>Mammalia</em> en GBIF</li>
+						<li>~20 mil registros de <em>Reptilia</em> en GBIF</li>
+						<li>~30 mil registros de <em>Amphibia</em> en GBIF</li>
+						<li>~5.7 millones registros de <em>Aves</em> en GBIF</li>
+						<li>~700 mil registros de <em>Plantae</em> en GBIF</li>
+						<li>~65 mil registros de <em>Chordata</em> de OCTN</li>
+						<li>~6 mil registros de <em>Chordata</em> de Mapcobio</li>
+					  </ul>
+					</p>
+                  </ul>
+				</section>
+				<section id="base-datos-03">
+				  <h3>Base de datos para DDC de Fonafifo</h3>
+                  <ul>
+					<p>
+					  <strong>1373 áreas de distribución</strong>:
+					  <ul>
+					    <li>256 áreas de <em>Mammalia</em> de IUCN</li>
+						<li>18 áreas de <em>Reptilia</em> de IUCN</li>
+						<li>229 áreas de <em>Amphibia</em> de IUCN</li>
+						<li>870 áreas de <em>Aves</em> de BirdLife International</li>
+					  </ul>
+					</p>
+                  </ul>
+				</section>	
+				<section id="base-datos-04">
+				  <h3>Base de datos para DDC de Fonafifo</h3>
+                  <ul>
+					<p>
+					  <strong>Listas de especies</strong>:
+					  <ul>
+					    <li>Especies amenazadas (VU, EN, CR) de IUCN</li>
+						<li>Especies en peligro de extinción de Costa Rica</li>
+						<li>Especies con poblaciones reducidas o amenazadas de Costa Rica</li>
+						<li>Especies vedadas de Costa Rica</li>
+					  </ul>
+					</p>
+                  </ul>
+				</section>					
+				<section id="calidad-datos">
+				  <h3>Consideraciones de calidad de datos</h3>
+                  <ul>
+					<p>
+					  <strong>Datos geoespaciales</strong>
+					  <ul>
+					    <li>Geometrías inválidas: deben "limpiarse" antes de realizar geoprocesamientos</li>
+					  </ul>
+					</p>
+					<p>
+					  <strong>Datos taxonómicos</strong>
+					  <ul>
+						<li>Errores ortográficos, uso inconsistente de sinónimos y nombres válidos/aceptados: es importante el empleo de autoridades taxonómicas como el <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"><em>backbone</em> taxonómico de GBIF</a> (ver <a href="http://api.gbif.org/v1/species/match?verbose=false&kingdom=Animalia&name=Herpailurus%20yaguarondi">ejemplo de uso</a>)</li>
+					  </ul>
+					</p>					
+                  </ul>
+				</section>	
+				<section id="oportunidades-mejora">
+				  <h3>Oportunidades de mejora</h3>
+                  <ul>
+                    <li>Integrar la curación de datos en el complemento</li>
+					<li>Utilizar un motor de bases de datos más liviano (ej. <a href="https://www.sqlite.org/">SQLite</a>)</li>
+					<li>Incorporar visualizaciones y análisis más detallados de los registros de presencia y las áreas de distribución</li>
+                  </ul>
+				</section>				
 				
 				<section id="final">
-				  <p>Esta presentación está disponible en <br><a href="https://estimacion-biodiversidad.github.io/presentacion-ifam-20190920/">https://estimacion-biodiversidad.github.io/presentacion-ifam-20190920/</a></p>
+				  <h3>Enlaces de interés</h3>
+				  <ul>
+				    <p>
+					  Código fuente del complemento:
+					  <br>
+					  <a href="https://github.com/estimacion-biodiversidad/estimacion-biodiversidad-qgis-plugin">https://github.com/estimacion-biodiversidad/estimacion-biodiversidad-qgis-plugin</a>
+					</p>
+				    <p>
+					  Esta presentación:
+					  <br>
+					  <a href="https://estimacion-biodiversidad.github.io/presentacion-ifam-20190920/">https://estimacion-biodiversidad.github.io/presentacion-ifam-20190920/</a></p>
+					</p>
+				  </ul>
 				</section>								
 			</div>
 		</div>
