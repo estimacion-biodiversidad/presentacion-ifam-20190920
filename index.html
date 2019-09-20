@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Desarrollo del prototipo de un complemento en QGIS para la estimación de la biodiversidad</title>
+		
+		<meta name="description" content="Desarrollo del prototipo de un complemento en QGIS para estimación de la biodiversidad">
+		<meta name="author" content="Manuel Vargas">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">		
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->		
+		
+    <style type="text/css">
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        .column-logo-left {
+            float: left;
+            width: 30%;
+        }
+
+        .column-logo-center {
+            float: left;
+            width: 40%;
+        }
+
+        .column-logo-right {
+            float: left;
+            width: 30%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>		
+		
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="portada">
+					<h3>Desarrollo del prototipo de un complemento en QGIS para estimación de la biodiversidad</h3>
+  				    <small>
+                      Manuel Vargas (<a href="mailto:mfvargas@gmail.com">mfvargas@gmail.com</a>)
+                      <br>
+                      José Cuadra (<a href="josecuadra@gmail.com">josecuadra@gmail.com</a>)
+                      <br>
+                      William Ulate (<a href="william_ulate_r@yahoo.com">william_ulate_r@yahoo.com</a>)
+                    </small>
+					<br><br>
+					<small>San José, 20 de setiembre de 2019</small>
+					<br><br>
+                    <div class="row">
+                      <div class="column-logo-left">
+                        <img src="img/logo-minae.png" alt="logo-minae" style="height:120px;border:none;background:white;">
+                      </div>
+                      <div class="column-logo-center">
+                        <img src="img/logo-fonafifo.png" alt="logo-fonafifo" style="height:100px;border-top:10px solid white;border-bottom:10px solid white;border-left:20px solid white;border-right:20px solid white;background:white;">
+                      </div>
+                      <div class="column-logo-right">
+                        <img src="img/logo-esencial-cr.png" alt="logo-esencial-cr" style="height:90px;border:15px solid white;background:white;">
+                      </div>
+                    </div> 
+				</section>
+				<section id="biodiversidad-psa">
+				  <h3>Biodiversidad en fincas con contrato de PSA</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/fincas-psa-2018.jpg" alt="Fincas con contrato de PSA" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Fincas con contrato de PSA</small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                        <li>¿Cuántas y cuáles especies hay en una finca?</li>
+                        <li>¿Cuáles grupos taxonómicos deben considerarse?</li>
+                        <li>¿Cuántas y cuáles especies están amenazadas?</li>
+                    </div>
+                  </div>
+				</section>
+				<section id="biodiversidad-otras-zonas">
+				  <h3>Otras zonificaciones</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/zonificaciones.gif" alt="Fincas con contrato de PSA" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Zonificaciones</small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                          <li>División política</li>
+                          <li>Áreas protegidas</li>
+                          <li>Corredores biológicos</li>
+                          <li>Humedales</li>
+                          <li>Otras</li>
+                    </div>
+                  </div>
+				</section>
+				<section id="captura-datos">
+				  <h3>Métodos de captura de datos de biodiversidad</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/captura-datos-biodiversidad.gif" alt="Captura de datos de biodiversidad" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Imágenes disponibles en <a href="https://www.wikipedia.org/">Wikipedia</a></small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                        <li>Recolección de organismos</li>
+                        <li>Cámaras trampa</li>
+                        <li>Grabadoras de sonidos</li>
+                        <li>Sensores remotos</li>
+                        <li>Ciencia ciudadana</li>
+                    </div>
+                  </div>
+				</section>
+				<section id="distribucion-biodiversidad-2">
+				  <h3>Representación de la distribución espacial de la biodiversidad</h3>
+    			  <div class="row" >
+                    <div class="column" style="width:30%">
+				      <figure>
+                        <img src="img/registros-presencia.jpg" alt="Registros de presencia de especies" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                      </figure>
+                    </div>
+                    <div class="column" style="width:70%">
+                      <ul>
+                        <p>Registros de presencia de especies</p>
+                      </ul>
+                    </div>
+                  </div>
+    			  <div class="row" >
+                    <div class="column" style="width:30%">
+				      <figure>
+                        <img src="img/areas-distribucion.jpg" alt="Áreas de distribución de especies" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                      </figure>
+                    </div>
+                    <div class="column" style="width:70%">
+                      <ul>
+                        <p>Áreas de distribución de especies</p>
+                      </ul>
+                    </div>
+                  </div>
+				</section>
+				<section id="registros-presencia">
+				  <h3>Registros de presencia de especies</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/registros-presencia.png" alt="Registros de presencia de especies" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Registros de presencia de <em>Ara ambiguus</em></small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                        <p>Datos primarios sobre la presencia de una especie:</p>
+                        <p><strong>¿Qué?</strong></p>
+                        <p><strong>¿Dónde?</strong></p>
+                        <p><strong>¿Cuándo?</strong></p>
+                    </div>
+                  </div>
+				</section>
+				<section id="dwc">
+				  <h3>El Darwin Core (DwC, <a href="https://dwc.tdwg.org/">https://dwc.tdwg.org/</a>)</h3>
+                  <ul>
+                    <li>Estándar de datos mantenido por la comunidad internacional de informática de la biodiversidad</li>
+                    <li>Incluye un <a href="https://dwc.tdwg.org/terms/">glosario de términos</a> con identificadores, etiquetas y definiciones que facilitan el intercambio de información sobre biodiversidad.</li>
+                    <li>Permite <a href="">cuatro tipos de datos principales</a>:
+                        <ul>
+                            <li><em>Metadatos</em></li>
+                            <li>Registros de presencia</li>
+                            <li>Listas de especies</li>
+                            <li>Datos de eventos de muestreo</li>
+                        </ul>
+                    </li>
+                  </ul>
+				</section>
+				<section id="dwc-mapeo">
+				  <h3>Mapeo de datos a los términos del DwC</h3>
+				  <figure>
+                    <img src="img/dwc-fields.png" alt="Mapeo de datos de presencia a los términos del DwC" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                    <figcaption><small>Mapeo de datos de presencia a los términos del DwC (imagen de <a href="https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms">Gcube Wiki</a>)</small></figcaption>
+                  </figure>
+				</section>
+				<section id="dwca">
+				  <h3>El Darwin Core Archive (DwC-A)</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/dwca.png" alt="Estructura del DwC-A" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Estructura del DwC-A (imagen de <a href="https://gcube.wiki.gcube-system.org/gcube/Darwin_Core_Terms">Gcube Wiki</a>)</small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                        <p>Archivo ZIP que contiene:</p>
+                        <small>
+                            <li>Archivo de texto con datos del <em>núcleo</em></li>
+                            <li>Archivo XML con descriptores de los datos</li>
+                            <li>Archivo XML de metadatos según el estándar <a href="https://knb.ecoinformatics.org/external//emlparser/docs/index.html">EML</a></li>
+                            <li>Archivos de texto opcionales con datos de extensiones (ej. nombres comunes, imágenes, descripciones de especies)</li>
+                        </small>
+                    </div>
+                  </div>
+				</section>
+				<section id="areas-distribucion">
+				  <h3>Áreas de distribución de especies</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/dist-saimiri-oerstedii.png" alt="Áreas de distribución de especies" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Área de distribución de <em>Saimiri oerstedii</em></small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                        <li>Polígonos correspondientes al área que habita una especie</li>
+						<li>Se distribuyen en formatos geoespaciales (ej. <em>shapefiles</em>)</li>
+                    </div>
+                  </div>
+				</section>
+				<section id="qgis">
+				  <h3>QGIS (<a href="https://qgis.org/">https://qgis.org/</a>)</h3>
+				  <div class="row" >
+				    <div class="column" style="width:40%">
+				      <figure>
+                        <img src="img/qgis-logo.svg" alt="Logo de QGIS" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Logo de QGIS</em></small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:60%">
+                      <ul>
+                        <li>Sistema de información geográfica (SIG) de código libre y abierto</li>
+						<li>Multiplataforma (Linux, Mac OS, Windows, ...)</li>
+						<li>Disponible en varios idiomas</li>
+						<li>Programable y extendible a través de <strong>complementos (<em>plugins</em>)</strong></li>
+                    </div>
+                  </div>
+				</section>
+				<section id="complementos-qgis">
+				  <h3>Complementos de QGIS (<a href="https://plugins.qgis.org/">https://plugins.qgis.org/</a>)</h3>
+                  <ul>
+                    <li>Aplicaciones desarrolladas independientemente, pero que se ejecutan en el ambiente de QGIS</li>
+					<li>Extienden y personalizan la funcionalidad principal de QGIS</li>
+					<li>La mayoría están programados en el lenguaje <a href="https://www.python.org/">Python</a></li>
+                  </ul>
+				</section>				
+				<section id="postgresql-postgis">
+				  <h3>PostgreSQL (<a href="https://www.postgresql.org/">https://www.postgresql.org/</a>) y PostGIS (<a href="https://postgis.net/">https://postgis.net/</a>)</h3>
+				  <div class="row" >
+				    <div class="column" style="width:40%">
+				      <figure>
+                        <img src="img/postgis-logo.png" alt="Logo de PostGIS" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Logo de PostGIS</em></small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:60%">
+                      <ul>
+                        <li><strong>PostgreSQL</strong> es un motor de bases de datos de código libre y abierto</li>
+						<li><strong>PostGIS</strong> incorpora en PostgreSQL tipos de datos geoespaciales (puntos, líneas, polígonos, raster) y funciones de geoprocesamiento</li>
+                    </div>
+                  </div>
+				</section>								
+				<section id="complemento-estimacion-biodiversidad">
+				  <h3>Complemento de QGIS para estimación de biodiversidad</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/snapshot-complemento.png" alt="Complemento de QGIS para estimación de biodiversidad" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Complemento de QGIS para estimación de biodiversidad</small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                        <p>Calcula la cantidad de especies en áreas seleccionadas, con base en <strong>registros de presencia</strong> y <strong>áreas de distribución</strong></p>
+                    </div>
+                  </div>
+				</section>			
+				<section id="complemento-seleccion-areas">
+				  <h3>Selección de áreas para analizar</h3>
+				  <div class="row" >
+				    <div class="column" style="width:60%">
+				      <figure>
+                        <img src="img/complemento-seleccion.png" alt="Selección de áreas para analizar" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                        <figcaption><small>Selección de áreas para analizar</small></figcaption>
+                      </figure>
+                    </div>
+				    <div class="column" style="width:40%">
+                      <ul>
+                        <li>Puede hacerse con las herramientas de selección de QGIS (por polígono, por radio, ...)</li>
+						<li>O por riqueza de especies (por grupo taxonómico, por categoría de amenaza, ...)</li>
+					  </ul>
+                    </div>
+                  </div>
+				</section>	
+				<section id="complemento-seleccion-datos-desplegar">
+				  <h3>Selección de datos para desplegar</h3>
+			      <figure>
+                    <img src="img/complemento-columnas.png" alt="Selección de datos para desplegar" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                    <figcaption><small>Selección de datos para desplegar</small></figcaption>
+                  </figure>
+				</section>					
+				<section id="complemento-reporte">
+				  <h3>Reporte de resultados</h3>
+			      <figure>
+                    <img src="img/complemento-reporte.png" alt="Reporte de resultados" style="border:none;background:none;box-shadow:none;margin: 0px 0px;">
+                    <figcaption><small>Reporte de resultados</small></figcaption>
+                  </figure>
+				</section>		
+				
+				<section id="final">
+				  <p>Esta presentación está disponible en <br><a href="https://indice-naturaleza.github.io/presentacion-cierre-ph-20180723/">https://indice-naturaleza.github.io/presentacion-cierre-ph-20180723/</a></p>
+				</section>								
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				history: true,				
+				
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
